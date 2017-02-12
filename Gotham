@@ -6,11 +6,11 @@ total_run_times 0
 
 own_window yes
 own_window_type normal
-own_window_transparent no
+own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_colour 000000
 own_window_argb_visual yes
-own_window_argb_value 128
+own_window_argb_value 0
 
 double_buffer yes
 #minimum_size 250 5
@@ -22,6 +22,8 @@ draw_graph_borders no
 default_color white
 default_shade_color red
 default_outline_color green
+color1 EAEAEA
+color2 FFA300
 alignment bottom_left
 gap_x 40
 gap_y 80
@@ -35,11 +37,11 @@ use_spacer yes
 
 minimum_size 0 0
 TEXT
-${voffset 10}${color EAEAEA}${font GE Inspira:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color FFA300}${font GE Inspira:pixelsize=48}${time %d} ${voffset -15}${color EAEAEA}${font GE Inspira:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 20}${font GE Inspira:pixelsize=58}${offset -115}${time %A}${font}
-${voffset 30}${offset 12}${font Oxygen Mono:pixelsize=14}${color FFA300}HD ${offset 5}$color${fs_used /} / ${fs_size /}${tab 100, 0}${color FFA300}RAM ${offset 5}$color${mem} / ${memmax}${tab 200, 0}${color FFA300}BATTERY${offset 5}$color${battery_percent BAT0}%
-${offset 13}${fs_bar 3, 155 /}${tab 100, 0}${membar 3, 175}${tab 200, 0}${battery_bar 3, 90 BAT0}
-${voffset 8}${offset 12}${color FFA300}CPU ${tab 40, 0}$color${cpu cpu0}%${tab 100, 0}${color FFA300}CPU TEMP ${offset 5}$color${hwmon temp 1}°C${tab 200, 0}${color FFA300}CPU FAN ${offset 5}$color${hwmon 2 fan 1}${font Oxygen Mono:pixelsize=11}RPM${font Oxygen Mono:pixelsize=14}${voffset -3}
-${voffset 8}${offset 12}${color FFA300}UPLOAD ${tab 40, 0}$color${upspeed wlp3s0}${tab 100, 0}${color FFA300}DOWNLOAD ${offset 5}$color${downspeed wlp3s0}
+${voffset 10}${color1}${font GE Inspira:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color2}${font GE Inspira:pixelsize=48}${time %d} ${voffset -15}${color1}${font GE Inspira:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 20}${font GE Inspira:pixelsize=58}${offset -115}${time %A}${font}
+${voffset 30}${font Oxygen Mono:pixelsize=14}${color2}HD ${offset 5}$color${fs_used /} / ${fs_size /}${tab 100, 0}${color2}RAM ${offset 5}$color${mem} / ${memmax}${tab 200, 0}${color2}BATTERY${offset 5}$color${battery_percent BAT0}%
+${voffset -5}${color1}${fs_bar 3, 190 /}${color}${tab 100, 0}${color1}${membar 3, 190}${color}${tab 200, 0}${color1}${battery_bar 3, 190 BAT0}${color}
+${voffset 5}${color2}CPU ${tab 40, 0}$color${cpu cpu0}%${tab 100, 0}${color2}CPU TEMP ${offset 5}$color${hwmon temp 1}°C${tab 200, 0}${color2}CPU FAN ${offset 5}$color${hwmon 2 fan 1}${font Oxygen Mono:pixelsize=11}RPM${font Oxygen Mono:pixelsize=14}${voffset -3}
+${voffset 8}${color2}UPLOAD ${tab 40, 0}$color${upspeed wlp3s0}${tab 100, 0}${color2}DOWNLOAD ${offset 5}$color${downspeed wlp3s0}
 
 
 
