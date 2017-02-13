@@ -72,11 +72,4 @@ ${voffset -10}${color2}${hr 1}${color}
 ${voffset 10}${offset 20}${audacious_title 50}
 ${voffset 5}${tab 20,0}${tab 100,20}${audacious_position} / ${audacious_length}
 ${voffset 5}${tab 20,0}${audacious_status}${tab 100,20}${color2}${audacious_bar 10,180}${color}
-${voffset -2}${color2}${hr 1}${color}
-${voffset 5}${color2}${goto 25}name${goto 205}pid${goto 280}cpu${goto 340}mem${color}
-${voffset 5}${goto 25}${top name 1}${goto 200}${top pid 1}${goto 275}${top cpu 1}${goto 335}${top mem 1}
-${voffset 5}${goto 25}${top name 2}${goto 200}${top pid 2}${goto 275}${top cpu 2}${goto 335}${top mem 2}
-${voffset 5}${goto 25}${top name 3}${goto 200}${top pid 3}${goto 275}${top cpu 3}${goto 335}${top mem 3}
-${voffset 5}${goto 25}${top name 4}${goto 200}${top pid 4}${goto 275}${top cpu 4}${goto 335}${top mem 4}
-${voffset 5}${goto 25}${top name 5}${goto 200}${top pid 5}${goto 275}${top cpu 5}${goto 335}${top mem 5}
 
