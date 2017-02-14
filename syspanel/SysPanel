@@ -50,14 +50,14 @@ ${voffset 5}${tab 20,0}logged in user(s)${tab 100,20}${user_names}
 
 ${voffset 5}${tab 20,0}uptime${tab 100,20}${uptime}
 
-${voffset 3}${tab 20,0}battery${tab 98,20} ${battery_short BAT0}${tab 22,98}${battery_time}
-${voffset -2}${tab 20,0}${tab 100,20}${color2}${battery_bar 10,180 BAT0}${color}
+${voffset 5}${tab 20,0}battery${tab 100,20}${battery_short BAT0}${alignr}${offset -20}${font Oxygen:pixelsize=11}${battery_time}${font}
+${voffset -5}${tab 20,0}${tab 100,20}${color2}${battery_bar 10,180 BAT0}${color}
 ${voffset 5}${tab 20,0}file system${tab 100,20}${fs_used /} / ${fs_size /}
-${voffset -2}${tab 20,0}${tab 100,20}${color2}${fs_bar 10,180 /}${color}
-${voffset 3}${tab 20,0}memory${tab 100,20}${mem} / ${memmax}
-${voffset -2}${tab 20,0}${tab 100,20}${color2}${membar 10,180 /}${color}
-${voffset 3}${tab 20,0}cpu${tab 100,20}${cpu cpu0}%
-${voffset -2}${tab 20,0}${tab 100,20}${color2}${cpubar 10,180 /}${color}
+${voffset 0}${tab 20,0}${tab 100,20}${color2}${fs_bar 10,180 /}${color}
+${voffset 5}${tab 20,0}memory${tab 100,20}${mem} / ${memmax}
+${voffset 0}${tab 20,0}${tab 100,20}${color2}${membar 10,180 /}${color}
+${voffset 5}${tab 20,0}cpu${tab 100,20}${cpu cpu0}%${alignr}${offset -20}${font Oxygen:pixelsize=11}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-26}${font}
+${voffset -5}${tab 20,0}${tab 100,20}${color2}${cpubar 10,180 /}${color}
 ${voffset 5}${tab 20,0}cpu temperature${tab 100,20}${hwmon temp 1}°C
 
 ${voffset 5}${tab 20,0}cpu fan${tab 100,20}${hwmon 2 fan 1}${font Oxygen:pixelsize=11}RPM${font}
@@ -71,5 +71,5 @@ ${voffset -2}${tab 20,0}${tab 100,20}${color2}${upspeedgraph wlp3s0 30,180}${col
 ${voffset -10}${color2}${hr 1}${color}
 ${voffset 10}${offset 20}${audacious_title 50}
 ${voffset 5}${tab 20,0}${tab 100,20}${audacious_position} / ${audacious_length}
-${voffset 5}${tab 20,0}${audacious_status}${tab 100,20}${color2}${audacious_bar 10,180}${color}
+${voffset -5}${tab 20,0}${audacious_status}${tab 100,20}${voffset 5}${color2}${audacious_bar 10,180}${color}
 
