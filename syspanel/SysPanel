@@ -42,9 +42,9 @@ draw_graph_borders no
 
 
 TEXT
-${voffset 10}${alignc}${color1}${font Ubuntu Light:pixelsize=120}${time %H:%M}${font}${color}${alignc}
+${voffset 10}${alignc}${color1}${font Ubuntu Light:pixelsize=120}${time %H %M}${font}${color}${alignc}
 ${voffset 10}${offset 20}${color2}${font Oxygen:pixelsize=40}${time %A}${font}${color}${offset 20}
-${voffset 5}${offset 200}${font Oxygen:pixelsize=20}${time %Y} ${time %B} ${color2}${time %d}${color}${font}
+${voffset 5}${offset 200}${font Oxygen:pixelsize=20}${time %Y %B }${color2}${voffset -10}${font Oxygen:pixelsize=30}${time %d}${font}${color}${font}
 ${voffset 0}${color2}${hr 1}${color}
 ${voffset 5}${tab 20,0}logged in user(s)${tab 100,20}${user_names}
 
@@ -52,10 +52,10 @@ ${voffset 5}${tab 20,0}uptime${tab 100,20}${uptime}
 
 ${voffset 5}${tab 20,0}battery${tab 100,20}${battery_short BAT0}${alignr}${offset -20}${font Oxygen:pixelsize=11}${battery_time}${font}
 ${voffset -5}${tab 20,0}${tab 100,20}${color2}${battery_bar 10,180 BAT0}${color}
-${voffset 5}${tab 20,0}file system${tab 100,20}${fs_used /} / ${fs_size /}
-${voffset 0}${tab 20,0}${tab 100,20}${color2}${fs_bar 10,180 /}${color}
-${voffset 5}${tab 20,0}memory${tab 100,20}${mem} / ${memmax}
-${voffset 0}${tab 20,0}${tab 100,20}${color2}${membar 10,180 /}${color}
+${voffset 5}${tab 20,0}file system${tab 100,20}${fs_used_perc /}%${alignr}${offset -20}${font Oxygen:pixelsize=11}${fs_used /} / ${fs_size /}${font}
+${voffset -5}${tab 20,0}${tab 100,20}${color2}${fs_bar 10,180 /}${color}
+${voffset 5}${tab 20,0}memory${tab 100,20}${memperc}%${alignr}${offset -20}${font Oxygen:pixelsize=11}${mem} / ${memmax}${font}
+${voffset -5}${tab 20,0}${tab 100,20}${color2}${membar 10,180 /}${color}
 ${voffset 5}${tab 20,0}cpu${tab 100,20}${cpu cpu0}%${alignr}${offset -20}${font Oxygen:pixelsize=11}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-26}${font}
 ${voffset -5}${tab 20,0}${tab 100,20}${color2}${cpubar 10,180 /}${color}
 ${voffset 5}${tab 20,0}cpu temperature${tab 100,20}${hwmon temp 1}°C
@@ -70,8 +70,8 @@ ${voffset 5}${tab 20,0}upload speed${tab 100,20}${upspeed wlp3s0}
 ${voffset -2}${tab 20,0}${tab 100,20}${color2}${upspeedgraph wlp3s0 30,180}${color}
 ${if_match "${audacious_status}" != "Not running"}
 ${voffset -10}${color2}${hr 1}${color}
-${voffset 5}${tab 20,0}${execi 1 audtool --playback-status}${tab 100,20}${audacious_position} / ${audacious_length}
-${voffset 0}${tab 20,0}${tab 100,20}${color2}${audacious_bar 10,180}${color}
+${voffset 5}${tab 20,0}${execi 1 audtool --playback-status}${tab 100,20}V ${execi 1 audtool get-volume}%${alignr}${offset -20}${font Oxygen:pixelsize=11}${audacious_position} / ${audacious_length}${font}
+${voffset -5}${tab 20,0}${tab 100,20}${color2}${audacious_bar 10,180}${color}
 ${voffset 5}${offset 20}title${tab 100,20}${execi 1 audtool --current-song-tuple-data title | cut -c -23}
 
 ${voffset 5}${offset 20}artist${tab 100,20}${execi 1 audtool --current-song-tuple-data artist | cut -c -23}
