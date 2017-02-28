@@ -46,7 +46,7 @@ ${voffset 10}${alignc}${color1}${font Ubuntu Light:pixelsize=120}${time %H %M}${
 ${voffset 10}${offset 20}${color2}${font Oxygen:pixelsize=40}${time %A}${font}${color}${offset 20}
 ${voffset 5}${offset 200}${font Oxygen:pixelsize=20}${time %Y %B }${color2}${voffset -10}${font Oxygen:pixelsize=30}${time %d}${font}${color}${font}
 ${voffset 0}${color2}${hr 1}${color}
-${voffset 5}${tab 20,0}logged in user(s)${tab 100,20}${user_names}
+${voffset 5}${tab 20,0}logged in user(s)${tab 100,20}${exec echo $USER}${alignr}${offset -20}${font Oxygen:pixelsize=11}${exec getent passwd $USER | cut -d ':' -f 5 | cut -d ',' -f 1}${font}
 
 ${voffset 5}${tab 20,0}uptime${tab 100,20}${uptime}
 
@@ -78,4 +78,5 @@ ${voffset 5}${offset 20}artist${tab 100,20}${execi 1 audtool --current-song-tupl
 
 ${voffset 5}${offset 20}album${tab 100,20}${execi 1 audtool --current-song-tuple-data album | cut -c -23}
 ${endif}
+
 
