@@ -40,6 +40,9 @@ draw_outline no
 draw_borders no
 draw_graph_borders no
 
+template9 wlp3s0
+
+
 
 TEXT
 ${voffset 10}${alignc}${color1}${font Ubuntu Light:pixelsize=120}${time %H %M}${font}${color}${alignc}
@@ -62,12 +65,12 @@ ${voffset 5}${tab 20,0}cpu temperature${tab 100,20}${hwmon temp 1}°C
 
 ${voffset 5}${tab 20,0}cpu fan${tab 100,20}${hwmon 2 fan 1}${font Oxygen:pixelsize=11}RPM${font}
 ${voffset 0}${color2}${hr 1}${color}
-${voffset 5}${tab 20,0}ip address${tab 100,20}${addr wlp3s0}
+${voffset 5}${tab 20,0}ip address${tab 100,20}${addr $template9}${alignr}${offset -20}${font Oxygen:pixelsize=11}${wireless_essid $template9}${font}
 
-${voffset 5}${tab 20,0}download speed${tab 100,20}${downspeed wlp3s0}
-${voffset -2}${tab 20,0}${tab 100,20}${color2}${downspeedgraph wlp3s0 30,180}${color}
-${voffset 5}${tab 20,0}upload speed${tab 100,20}${upspeed wlp3s0}
-${voffset -2}${tab 20,0}${tab 100,20}${color2}${upspeedgraph wlp3s0 30,180}${color}
+${voffset 5}${tab 20,0}download speed${tab 100,20}${downspeed $template9}
+${voffset -2}${tab 20,0}${tab 100,20}${color2}${downspeedgraph $template9 30,180}${color}
+${voffset 5}${tab 20,0}upload speed${tab 100,20}${upspeed $template9}
+${voffset -2}${tab 20,0}${tab 100,20}${color2}${upspeedgraph $template9 30,180}${color}
 ${if_match "${audacious_status}" != "Not running"}
 ${voffset -10}${color2}${hr 1}${color}
 ${voffset 5}${tab 20,0}${execi 1 audtool --playback-status}${tab 100,20}V ${execi 1 audtool get-volume}%${alignr}${offset -20}${font Oxygen:pixelsize=11}${audacious_position} / ${audacious_length}${font}
