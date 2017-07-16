@@ -43,4 +43,5 @@ ${voffset 160}
 ${voffset -40}${font Noto Mono:pixelsize=20}${goto 85}CPU${goto 285}RAM${goto 485}HDD${goto 685}BAT${font}
 ${voffset 0}${font Noto Mono:pixelsize=20}${goto 85}${cpu cpu0}%${goto 285}${memperc}%${goto 485}${fs_used_perc}%${goto 685}${battery_percent BAT0}%${font}
 ${hr 1}
-${alignc}${font TakaoPGothic:pixelsize=120}${time %H:%M}${font}
+${voffset 5}${alignr}${font TakaoPGothic:pixelsize=20}${offset -20}${time %Y %B %d}${font}
+${voffset -20}${alignc}${font TakaoPGothic:pixelsize=120}${time %R}${font}
